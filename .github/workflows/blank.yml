@@ -15,4 +15,4 @@ jobs:
           column-name: 'Featurebase'
           github-token: ${{ secrets.GITHUB_TOKEN }}
           content-id: ${{ github.event.issue.node_id }}
-          labeled: featurebase
+          # labeled: featurebase
