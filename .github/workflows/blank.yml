@@ -1,0 +1,17 @@
+name: Add Issues to GitHub Project Column
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  add_to_project:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Add issue to GitHub Project
+        uses: actions/add-to-project@v1
+        with:
+          project-url: https://github.com/orgs/SwipefyApp/projects/1
+          column-name: 'Featurebase'
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          content-id: ${{ github.event.issue.node_id }}
